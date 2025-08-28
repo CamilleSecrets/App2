@@ -113,7 +113,8 @@
       }
 
       const data = await response.json();
-      resultDiv.textContent = data.result;
+      const respostaLimpa = data.result.replace(/\*/g, "");
+      resultDiv.textContent = respostaLimpa;
 
       // Se a resposta chegou antes dos 60 segundos, finaliza o cooldown
       clearInterval(interval);
@@ -133,3 +134,4 @@
 </body>
 
 </html>
+
